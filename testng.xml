@@ -9,6 +9,7 @@
             <class name="DropdownTest"></class>
             <class name="SortTest"></class>
             <class name="ShoppingTest"></class>
+            <class name="FooterLinksTests"></class>
         </classes>
 
     </test>
