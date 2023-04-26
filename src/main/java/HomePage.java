@@ -20,6 +20,13 @@ public class HomePage extends BasePage{
     @FindBy (xpath = "//div[@class='col-md-3 col-sm-3 col-xs-12 nav-right']//span[@class='counter-number']")
     WebElement numberOfItemsInShoppingCart;
 
+    @FindBy (xpath = "//div[@class='content-right p1']//div[contains(text(),'KURSEVI')]")
+    WebElement footerLinkKursevi;
+    @FindBy (xpath = "//div[@class='content-right p1']//div[contains(text(),'NAČIN PLAĆANJA')]")
+    WebElement footerLinkNacinPlacanja;
+    @FindBy (xpath = "//div[@class='content-right p1']//div[contains(text(),'DOSTAVA ')]")
+    WebElement footerLinkDostava;
+
 
     //constructor
 
@@ -56,4 +63,23 @@ public class HomePage extends BasePage{
         waitForElement(numberOfItemsInShoppingCart);
         return numberOfItemsInShoppingCart.getText();
     }
+    public void clickOnFooterLinkKursevi (){
+        print("clickOnFooterLinkKursevi");
+        waitForElement(footerLinkKursevi);
+        assert isElementPresent(footerLinkKursevi) : "Element from footer KURSEVI is not present";
+        footerLinkKursevi.click();
+    }
+    public void clickOnFooterLinkNacinPlacanja (){
+        print("clickOnFooterLinkNacinPlacanja");
+        waitForElement(footerLinkNacinPlacanja);
+        assert isElementPresent(footerLinkNacinPlacanja) : "Element from footer NACIN PLACANJA is not present";
+        footerLinkNacinPlacanja.click();
+    }
+    public void clickOnFooterLinkDostava (){
+        print("clickOnFooterLinkDostava");
+        waitForElement(footerLinkDostava);
+        assert isElementPresent(footerLinkDostava) : "Element from footer DOSTAVA is not present";
+        footerLinkDostava.click();
+    }
+
 }
