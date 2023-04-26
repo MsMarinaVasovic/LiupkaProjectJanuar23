@@ -10,8 +10,6 @@ public class UserAccountPage extends BasePage {
     WebElement lozinkaField;
     @FindBy(xpath = "//div[@class='input-group-btn']")
     WebElement prijavaButton;
-    @FindBy(xpath = "//form[@id='cart_login_default']/span")
-    WebElement errorMessage;
     @FindBy (xpath = "//div[@class='co co-delivery-address']/button[contains(text(),'Uredi')]")
     WebElement urediButton;
 
