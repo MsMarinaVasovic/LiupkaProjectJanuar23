@@ -13,7 +13,6 @@ public class UserAccountPage extends BasePage {
     @FindBy (xpath = "//div[@class='co co-delivery-address']/button[contains(text(),'Uredi')]")
     WebElement urediButton;
 
-
     //constructor
     public UserAccountPage (ChromeDriver driver){
         super(driver);
