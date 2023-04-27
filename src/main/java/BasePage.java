@@ -10,9 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 
     //web elements
-    @FindBy(xpath ="//img[@src='docs/images/web/liupka_logo.svg']")
-    WebElement logoLiupka;
-
     @FindBy(xpath = "//div[@class='header-box-search']//div[@class='block-minicart dropdown summary_cart']/a[@class='dropdown-toggle']/span[@class='cart-icon']")
     WebElement shoppingCart;
 
@@ -20,7 +17,6 @@ public class BasePage {
     public BasePage(){}
     public BasePage (ChromeDriver driver) {
         print("Base page");
-        //ovde setujemo da driver iz testa bude i u klasi
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -31,7 +27,6 @@ public class BasePage {
         print("clickShoppingCart");
         shoppingCart.click();
     }
-
     public static void print (String s) { System.out.println(s); }
 
     public boolean verifyURL (String expectedUrl){
@@ -39,10 +34,9 @@ public class BasePage {
         String currentURL= driver.getCurrentUrl();
         return currentURL.equals(expectedUrl);
     }
-
     public void sleep (int seconds){
         try {
-            Thread.sleep(seconds*1000);//zato sto prihvata nanosekunde stavljamo seconds*1000
+            Thread.sleep(seconds*1000);
         }catch (Exception e) {
             print(e.getMessage());
         }
