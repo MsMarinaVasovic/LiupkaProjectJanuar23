@@ -27,8 +27,6 @@ public class BannersTest extends BaseTest {
             String actualUrl1 = driver.getCurrentUrl();
             driver.close();
             driver.switchTo().window(tabs.get(0));
-            String actualUrl2 = driver.getCurrentUrl();
-
             print("Verify that a new window has opened on YouTube");
             assert actualUrl1.equals(Strings.YOUTUBE_BANNER_URL) : "User is on wrong page. Expected: " + Strings.YOUTUBE_BANNER_URL + "Actual:" + actualUrl1;
 
