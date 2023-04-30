@@ -5,7 +5,6 @@
         <classes>
             <class name="BannersTest"></class>
             <class name="FooterLinksTests"></class>
-            <class name="LoginTest"></class>
         </classes>
     </test>
 </suite>
