@@ -37,9 +37,6 @@ public class StorePages extends BasePage{
         assert isElementPresent(sewingMachines) : "Element sewing machines ('Masine za sivenje') is not present";
         sewingMachines.click();
     }
-    public boolean  isDropdownIsPresent () {
-        return isElementPresent(sortDropDownOptionsButton);
-    }
     public void sortItemsByCriteria (String sortCriteria) {
         print("sortItemsByCriteria");
         Select select= new Select(sortDropDownOptionsButton);
