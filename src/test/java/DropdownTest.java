@@ -32,7 +32,7 @@ public class DropdownTest extends BaseTest {
             print("3.Click on option Masine za sivenje");
             storePages.clickOnSewingMachines();
             List<WebElement> allSortingOptions = driver.findElements(By.xpath("//select[@class='sorter-options form-control']/option"));
-            for (int i = 0; i<allSortingOptions.size(); i++) {
+            for (int i = 0; i < allSortingOptions.size(); i++) {
                 String option = allSortingOptions.get(i).getText();
                 print("Sorting option"+(1+i) +": "  +option);
             }
@@ -41,6 +41,7 @@ public class DropdownTest extends BaseTest {
             print("Verify that the total number of sorting options is equal to the defined number of sorting options");
             int numberOfSortingOptions = allSortingOptions.size();
             assert numberOfSortingOptions == Strings.NUMBER_OF_SORTING_OPTIONS :"Wrong number of sorting options";
+
             print("Verify that each listed sort option matches the defined sort option");
             assert allSortingOptions.get(0).getText().contains(Strings.SORT_OPTION_1) : "Wrong option 1";
             assert allSortingOptions.get(1).getText().contains(Strings.SORT_OPTION_2) : "Wrong option 2";
