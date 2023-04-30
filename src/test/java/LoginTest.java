@@ -82,4 +82,37 @@ public class LoginTest extends BaseTest{
             driver.quit();
         }
     }
+    /**
+     * Login test with SQL injection attack
+     * Steps:
+     * 1.Go to home page
+     * 2.Click on User icon
+     * 3.Enter malicious password
+     * 4.Click PRIJAVA button
+     *
+     * Expected result:
+     * Verify the error message
+     */
+    @Test
+    public void loginFormVulnerabilityCheck() {
+        print("Login test with SQL injection attack");
+        ChromeDriver driver = openChromeDriver();
+        try {
+            print("1.Go to home page");
+            HomePage homePage = new HomePage(driver);
+            print("2.Click on User icon");
+            homePage.clickOnUserIcon();
+            UserAccountPage userAccountPage = new UserAccountPage(driver);
+            print("3.Enter malicious password");
+            userAccountPage.enterTextInLozinkaField(Strings.MALICIOUS_PASSWORD);
+            print("4.Click PRIJAVA button");
+            userAccountPage.prijavaButton.click();
+            WebDriverWait wait = new WebDriverWait(driver,30);
+            String errorText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@id='cart_login_default']//span"))).getText();
+            print("Verify the error message");
+            assert errorText.contains(Strings.ERROR_MESSAGE) : "Error message is not displayed due to SQL error.";
+        } finally {
+            driver.quit();
+        }
+    }
 }
