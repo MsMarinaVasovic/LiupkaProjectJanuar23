@@ -1,7 +1,6 @@
 public class Strings {
 
     public static final String HOME_PAGE_URL = "https://www.liupka.com/";
-    public static final String LOGIN_AND_REGISTRATION_PAGE_URL = "https://www.liupka.com/rs/?action=account";
     public static final String USER_ACCOUNT_PAGE_URL = "https://www.liupka.com/rs/?action=account";
     public static final String YOUTUBE_BANNER_URL = "https://www.youtube.com/channel/UCq_RnjTA4nz-3dJ5Ui5sbyw";
     public static final String KURSEVI_I_RADIONICE_URL ="https://www.liupka.com/rs/kursevi-i-radionice";
