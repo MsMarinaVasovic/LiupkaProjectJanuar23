@@ -19,4 +19,5 @@ public class Strings {
     public static final String VALID_PASSWORD = "testpass123";
     public static final String INVALID_PASSWORD = "wrongpassword";
     public static final String ERROR_MESSAGE = "Pogrešna lozinka!";
+    public static final String MALICIOUS_PASSWORD = "'";
 }
