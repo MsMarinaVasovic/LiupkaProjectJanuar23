@@ -25,6 +25,10 @@ public class StorePages extends BasePage{
     @FindBy (xpath = "//div[@class='product-item-detail']/button/span")
     WebElement uKorpuSTORITVEButton;
 
+    @FindBy (xpath = "//button[@class='close']/span")
+    WebElement closeButtonFromModalWindow;
+
+
     //constructor
     public StorePages (ChromeDriver driver){
         super(driver);
@@ -72,4 +76,5 @@ public class StorePages extends BasePage{
         assert isElementPresent(uKorpuSTORITVEButton) : "Element U Korpu for product STORITVE is not present";
         uKorpuSTORITVEButton.click();
     }
+
 }
