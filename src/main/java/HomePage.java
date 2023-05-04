@@ -22,6 +22,9 @@ public class HomePage extends BasePage{
     @FindBy (xpath = "//div[@class='content-right p1']//div[contains(text(),'DOSTAVA ')]")
     WebElement footerLinkDostava;
 
+    @FindBy (xpath = "//div[@class='cc-compliance']")
+    WebElement allowCoociesButton;
+
     //constructor
     public HomePage (ChromeDriver driver){
         super(driver);
