@@ -24,9 +24,12 @@ public class StorePages extends BasePage{
     WebElement containerForSTORITVEProductItem;
     @FindBy (xpath = "//div[@class='product-item-detail']/button/span")
     WebElement uKorpuSTORITVEButton;
-
     @FindBy (xpath = "//button[@class='close']/span")
     WebElement closeButtonFromModalWindow;
+    @FindBy (xpath = "//span[@class='number']")
+    WebElement numberOfItemsInMiniCartWindow;
+
+
 
 
     //constructor
