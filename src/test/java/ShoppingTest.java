@@ -59,7 +59,7 @@ public class ShoppingTest extends BaseTest {
      * Verify that icon on shopping cart shows 1
      */
     @Test
-    public void testAddTwoItemsInShoppingCart() {
+    public void testAddTwoSameItemsInShoppingCart() {
         print("Testing adding one item to the shopping cart");
         ChromeDriver driver = openChromeDriver();
         try {
@@ -84,9 +84,12 @@ public class ShoppingTest extends BaseTest {
             kolicinaFieldFromModal.sendKeys("2");
             action.moveToElement(storePages.closeButtonFromModalWindow).click().build().perform();
             driver.navigate().refresh();
-
+            homePage.shoppingCart.click();
             String currentlNumberOfItemsInCart = homePage.getNumberOfItemsInShoppingCart();
-            assert currentlNumberOfItemsInCart.equals("2") : "Wrong number of items in cart. Expected 2, actual: " + currentlNumberOfItemsInCart;
+            String currentNumberOfSameItemsMiniCart = storePages.numberOfItemsInMiniCartWindow.getText();
+
+            assert currentlNumberOfItemsInCart.equals("1") : "Wrong number of items in cart. Expected 1, actual: " + currentlNumberOfItemsInCart;
+            assert currentNumberOfSameItemsMiniCart.equals("2") : "Wrong number of items in cart. Expected 2, actual : " + currentNumberOfSameItemsMiniCart;
 
         }finally {
             driver.quit();
