@@ -32,8 +32,7 @@ public class BasePage {
     public boolean verifyURL (String expectedUrl){
         print("Verify URL(" + expectedUrl+ ")");
         String currentURL= driver.getCurrentUrl();
-        return currentURL.equals(expectedUrl);
-    }
+        return currentURL.equals(expectedUrl);    }
     public void sleep (int seconds){
         try {
             Thread.sleep(seconds*1000);
